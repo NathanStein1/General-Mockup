@@ -16,3 +16,7 @@
     background-image: url(./binocs.jpg);
     background-size: cover;
 }
+
+.pad{
+    padding: 20px;
+}
