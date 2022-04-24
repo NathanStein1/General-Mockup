@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#vs {
+    padding: 10px;
+}
+
+.box {
+    border: solid;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    background-image: url(./binocs.jpg);
+    background-size: cover;
+}
