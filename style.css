@@ -17,6 +17,25 @@
     background-size: cover;
 }
 
-.pad{
-    padding: 20px;
+.pad1{
+    margin: 10px;
+    width: 300px;
+    height: 500px;
+    background-color: aquamarine;
+}
+
+
+.pad2{
+    margin: 10px;
+    width: 300px;
+    height: 500px;
+    background-color: orange;
+
+}
+
+
+.containerprice{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
