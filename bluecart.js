@@ -39,18 +39,50 @@ search_field.val(search.replaceAll("+", " ")); // sample search value
 $(".btn-secondary").text("Walmart"); // sample dropdown value
 
 // loop thru search results
+// sample match_list 
+// "object": {
+//     "a": "b",
+//     "c": "d"
+//   },
 var match_list = [];
 var item;
 for (let i = 0; i < results.length; i++) {
-  // console.log(results[i]);
+    if (i == 10){
+        break;
+    }
 
-  // TODO: Find common variable to retrieve specific item from search
-  // TODO: Option show title and have user pick from list
-  let title = results[i].product.title;
-  match_list.push(title);
+    // TODO: Find common variable to retrieve specific item from search
+    // TODO: Option show title and have user pick from list
+    let title = results[i].product.title;
+    let price = results[i].offers.primary.price;
+    let list_price = results[i].offers.primary.list_price;
+    let seller = results[i].offers.primary.seller.name;
+    let store_pickup = results[i].fulfillment.pickup;
+    let shipping_days = results[i].fulfillment.shipping_days;
+    let description = results[i].product.description;
+    let image = results[i].product.main_image;
+    let rating = results[i].product.rating;
+    let match = {
+        match: [
+            title,
+            {
+                "price": price,
+                "list_price": list_price,
+                "seller" : seller,
+                "store_pickup" : store_pickup,
+                "shipping_days" : shipping_days,
+                "description" : description,
+                "image" : image,
+                "rating" : rating
+            }
+        ] 
+    };
+
+    match_list.push(match);
+
 
   // Item found from search results
-  item = results[3]; // TODO: filter results to one
+  item = results[3]; // TODO: filter results to one - TEST ONLY
 }
 
 // Show item found in search result
@@ -67,7 +99,7 @@ var rating = item.product.rating;
 // console.log(`${seller} | ${store_pickup} | ${shipping_days}`);
 
 // Add values to page
-var walmart_image = $("div.box"); // TODO: Attach image only to second div.box
+var walmart_image = $($("div.box")[1]); // Attach image only to second div.box
 walmart_image.css("background-image", `url("${image}")`);
 
 var template = `<div class="pad2">
