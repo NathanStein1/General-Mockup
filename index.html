@@ -1,75 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <title>Price Compare</title>
+  </head>
 
-  <title>Price Compare</title>
-</head>
-
-<body>
-  <br>
-  <br>
-  <input class="container" placeholder="Type in product SKU">
-  <br>
-  <br>
-  <div class="container">
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        Select Store
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Wish</a>
-        <a class="dropdown-item" href="#">Amazon</a>
-        <a class="dropdown-item" href="#">Walmart</a>
+  <body>
+    <br />
+    <br />
+    <input class="container" placeholder="Type in the product you wish to search for" />
+    <br />
+    <br />
+    <div class="container">
+      <div class="companyTitle">
+       Walmart
+      </div>
+      <div id="vs">VS</div>
+      <div class="companyTitle">
+        Amazon
       </div>
     </div>
-    <div id="vs">VS</div>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        Select Store
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Wish</a>
-        <a class="dropdown-item" href="#">Amazon</a>
-        <a class="dropdown-item" href="#">Walmart</a>
+
+    <div class="container">
+      <div class="box"></div>
+
+      <div class="box"></div>
+    </div>
+    <div class="containerprice">
+      <div class="pad1">
+        <div class="price">Price:</div>
+        <div class="rating">Rating:</div>
+        <div class="shipping">Shipping:</div>
+        <div class="manufactuer">Manufactuer:</div>
+        <div class="url" href=""></div>
+
+      </div>
+
+      <div class="pad2">
+        <div class="price">Price:</div>
+        <div class="rating">Rating:</div>
+        <div class="shipping">Shipping:</div>
+        <div class="manufactuer">Manufactuer:</div>
+        <div class="url" href=""></div>
       </div>
     </div>
-  </div>
-
-  <div class="container">
-    <div class="box"></div>
 
 
-    <div class="box"></div>
-  </div>
-  <div class="containerprice">
-    <div class="pad1">
-      <div>Price:</div>
-      <div>Rating:</div>
-      <div>Shipping:</div>
-      <div>Manufactuer:</div>
-    </div>
 
-
-    <div class="pad2">
-      <div>Price:</div>
-      <div>Rating:</div>
-      <div>Shipping:</div>
-      <div>Manufactuer:</div>
-    </div>
-  </div>
-
-  <div class="loader"></div>
-</body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
-
+    <div class="loader"></div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+  <script src="./lib.js"></script>
+  <script src="./bluecart.js"></script>
+  <script src="./testdata.js"></script>
+  <script src="./frontendjs.js"></script>
 </html>
