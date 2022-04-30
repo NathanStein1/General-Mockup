@@ -34,9 +34,9 @@ jsonRaw = readData("testdata");
 results = jsonRaw.search_results;
 // console.log(results);
 
-brand = brand.split("=").pop();
-search_field.val(search.replaceAll("+", " ")); // sample search value
-$(".btn-secondary").text("Walmart"); // sample dropdown value
+// brand = brand.split("=").pop();
+// search_field.val(search.replaceAll("+", " ")); // sample search value
+// $(".btn-secondary").text("Walmart"); // sample dropdown value
 
 // loop thru search results
 var match_list = [];
