@@ -14,7 +14,16 @@
     height: 300px;
     margin: 10px;
     background-image: url(./binocs.jpg);
-    background-size: cover;
+    background-size: auto;
+}
+
+.box1 {
+    border: solid;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    background-image: url(./binocs.jpg);
+    background-size:auto;
 }
 
 .pad1 {

@@ -54,7 +54,7 @@ for (let i = 0; i < results.length; i++) {
 }
 
 // Show item found in search result
-console.log(item);
+//console.log(item);
 var price = item.offers.primary.price;
 var list_price = item.offers.primary.list_price;
 var seller = item.offers.primary.seller.name;
@@ -64,7 +64,7 @@ var description = item.product.description;
 var image = item.product.main_image;
 var rating = item.product.rating;
 
-// console.log(`${seller} | ${store_pickup} | ${shipping_days}`);
+ //console.log(`Walmart: ${seller} | ${store_pickup} | ${shipping_days} | ${image}`);
 
 // Add values to page
 var walmart_image = $("div.box"); // TODO: Attach image only to second div.box
