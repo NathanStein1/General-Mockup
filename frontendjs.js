@@ -1,1 +1,0 @@
-element.classList.add("mystyle")
