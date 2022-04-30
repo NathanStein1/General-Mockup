@@ -1,8 +1,18 @@
+body{
+    background-color: #acbae5;
+}
+
 .container {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
+
+.input {
+    display: flex;
+    justify-content: center;
+}
+
 
 #vs {
     padding: 10px;
@@ -60,9 +70,5 @@
 
 
 .hide {
-    display: none;
-}
-
-.hide2 {
     display: none;
 }

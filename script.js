@@ -19,5 +19,5 @@ getData().then((res) => {
     resultEl.textContent = res;
 })
 
-getData();
+// getData();
     
