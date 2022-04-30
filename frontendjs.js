@@ -5,7 +5,7 @@ var loader = document.querySelector('.loader');
 
 buttonEl1.addEventListener("click",function load(){
 //if we click add hide class
-//ialready hide class ,then remove hide class
+//if we already in the hide class ,then remove hide class
 
 if(loader.classList.contains("hide"))
  { 
