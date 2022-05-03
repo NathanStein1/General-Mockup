@@ -5,7 +5,6 @@ var sp = {
     api_key: "EBEB04EC9E944C168B8AFB1BAB02E657",
     search: "dyson+air+purifier+TP02",
     sort: "best_match",
-    brand: "facets=brand=dyson",
     condition: "new",
     customer_zipcode: "92152",
     output: "json"
@@ -13,8 +12,6 @@ var sp = {
 
 // sample curl call from API provider
 // "https://api.bluecartapi.com/request?api_key=EBEB04EC9E944C168B8AFB1BAB02E657&type=search&search_term=glass+cutter&sort_by=best_match&condition=new&output=json"
-
-// TODO: Uncomment fetch call for production use
 // fetch call to retrieve product items
 async function blueCartSearch(searchField) {
     var match_list = [];
@@ -38,9 +35,8 @@ async function blueCartSearch(searchField) {
             }
             let result = data.search_results[i];
 
-            // TODO: Find common variable to retrieve specific item from search
-            // TODO: Option show title and have user pick from list
-
+            // Find common variable to retrieve specific item from search
+            // Option show title and have user pick from list
             // Item found from search results
             match = {
                 title: result.product.title,
@@ -62,8 +58,7 @@ async function blueCartSearch(searchField) {
     return match_list
 }
 
-
-// TODO: Use function blueCartSearch()
+// TODO: Use function blueCartSearch() see sample call
 // blueCartSearch("ninja+air+fryer").then((data) => {
 //     var item_list = data;
 //     console.log(item_list);
