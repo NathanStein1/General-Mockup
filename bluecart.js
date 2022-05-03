@@ -44,7 +44,7 @@ function blueCartSearch(searchField) {
 
     manufactuer = searchParams.brand.split("=").pop();
     search_field.val(search_field.replaceAll("+", " ")); // sample search value
-    $(".btn-secondary").text("Walmart"); // sample dropdown value
+    // $(".btn-secondary").text("Walmart"); // sample dropdown value
 
     for (let i = 0; i < results.length; i++) {
         if (i == 10) {
