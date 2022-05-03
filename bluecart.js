@@ -1,6 +1,6 @@
 // parameter values for the API
 
-var sp = {
+let sp = {
     url: "https://api.bluecartapi.com/request?",
     api_key: "EBEB04EC9E944C168B8AFB1BAB02E657",
     search: "dyson+air+purifier+TP02",
@@ -14,15 +14,15 @@ var sp = {
 // "https://api.bluecartapi.com/request?api_key=EBEB04EC9E944C168B8AFB1BAB02E657&type=search&search_term=glass+cutter&sort_by=best_match&condition=new&output=json"
 // fetch call to retrieve product items
 async function blueCartSearch(searchField) {
-    var match_list = [];
-    var queryURL = `${sp.url}api_key=${sp.api_key}&type=search&search_term=${searchField}&sort_by=${sp.sort}&condition=${sp.condition}&output=${sp.output}`
+    let match_list = [];
+    let queryURL = `${sp.url}api_key=${sp.api_key}&type=search&search_term=${searchField}&sort_by=${sp.sort}&condition=${sp.condition}&output=${sp.output}`
     if (searchField == null) {
         searchField = sp.search;
     }
     await getData(queryURL).then(data => {
         // console.log(data);
         // check for remmaining credits
-        var credits = data.request_info.credits_remaining
+        let credits = data.request_info.credits_remaining
         if (credits == 0) {
             console.error(`Trial account ended. Credits count [${credits}]`)
         } else {
