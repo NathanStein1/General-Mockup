@@ -1,88 +1,72 @@
-var search_field = $(".container");
+// parameter values for the API
+var rain_sp = {
+  url: "https://api.rainforestapi.com/request?",
+  api_key: "D55BA8E25B2C41879508929A54C6AF9B",
+  search_term: "dyson+air+purifier+TP02",//temp var
+  condition: "new",
+  sort: "feature",
+  output: "json"
+}
 
-var url = "https://api.rainforestapi.com/request?";
-var api_key = "D55BA8E25B2C41879508929A54C6AF9B";
-var search_term = "dyson+air+purifier+TP02";
-var sort = "best_match";
-var brand = "facets=brand=dyson";
-var condition = "new";
-var customer_zipcode = "92152";
-var output = "json";
-var jsonRaw;
+// fetch call to retrieve product items
+async function rainforestSearch(searchField) {
+  let match_list = [];
+  let queryURL = `${rain_sp.url}api_key=${rain_sp.api_key}&type=search&amazon_domain=amazon.com&search_term=${rain_sp.search_term}&condition=${rain_sp.condition}&sort=${rain_sp.sort}&output=${rain_sp.output}`
+  //debug
+  if (searchField == null) {
+      searchField = sp.search_term;
+  }
+  //end debug
+  await getData(queryURL).then(data => {
+      // console.log(data);
+      // check for remmaining credits
+      let credits = data.request_info.credits_remaining
+      if (credits == 0) {
+          console.error(`Trial account ended. Credits count [${credits}]`)
+      } else {
+          console.log(`Current credits count [${credits}]`)
+      }
+      // console.log(data.search_results);
+      for (let i = 0; i < data.search_results.length; i++) {
+          if (i == 10) {
+              break;
+          }
+          let result = data.search_results[i];
 
-//const getData = async () => {
-//    const res = await fetch(
-//        `${url}api_key=${api_key}&type=search&amazon_domain=amazon.com&search_term=${search_term}&condition=${condition}&output=${output}`,
-//        {
-//          headers: {
-//            "Content-Type": "application/json",
-//            Accept: "application/json; odata=verbose",
-//          },
-//        }
-//      )
-//    const data = await res.json();
-//    console.log(data);
-//    const result = data.search_results[0].price.value;
-//    const credits = await data.request_info.credits_remaining
-//    if(credits == 0){
-//        console.error(`Trial account ended. Credit count [${credits}]`)
-//    }else{
-//        console.log(`You still have credits!. Credit count [${credits}]`)
-//    }
+          // Find common variable to retrieve specific item from search
+          // Option show title and have user pick from list
+          // Item found from search results
+         function check(item){
+          if (item){
+            var checkedItem = item.replace('?', '');
+          }else{
+            var checkedItem = "No DATA";
+          }
+          return checkedItem;
+         }
+          match = {
+              title: result.title,
+              price: check(result.price?.raw),
+              isprime: result.is_prime,
+              shipping: check(result.delivery?.price.raw),
+              image: result.rating,
+              rating: result.rating,
+              link: result.link
+          }
+          match_list.push(match);
+      }
+      
+  }).catch(err => {
+      console.error(err);
+  });
+  console.log(match_list)
+  return match_list
+}
 
-    // TODO: TEST ONLY use to not run credits
-    jsonRaw = readData("amazontestdata");
-    amazonResult = jsonRaw.search_results;
-    // console.log(amazonResult);
+// TODO: Use function blueCartSearch() see sample call
+// rainforestSearch("ninja+air+fryer").then((data) => {
+//     var item_list = data;
+//     console.log(item_list);
+// });
 
-    //brand = brand.split("=").pop();
-    //.val(search.replaceAll("+", " ")); // sample search value
-    //$(".btn-secondary").text("Amazon"); // sample dropdown value
-
-    // loop thru search amazonResult
-    var match_list = [];
-    var amazonitem;
-    for (let i = 0; i < amazonResult; i++) {
-        console.log(amazonResult[i]);
-
-        // TODO: Find common variable to retrieve specific amazonitem from search
-        // TODO: Option show title and have user pick from list
-        let title = amazonResult[i].product.title;
-        match_list.push(title);
-
-        // Item found from search amazonResult
-        
-    }
-    amazonitem = amazonResult[3]; // TODO: filter amazonResult to one
-    // Show amazonitem found in search result
-    //console.log("Amazon Item: " + amazonitem);
-    var amazonprice = amazonitem.price.raw;
-    var amazondescription = amazonitem.title;
-    var amazonimage = amazonitem.image;
-    var amazonrating = amazonitem.rating;
-    var amazonshipping = amazonitem.delivery.price.value;
-     //console.log(`${amazonimage}`);
-
-    // Add values to page
-    var amazon_image = $("div.box1"); // TODO: Attach image only to second div.box
-    amazon_image.css("background-image", `url("${amazonimage}")`);
-
-    var amazontemplate = `<div class="pad1">
-                    <div>Price: ${amazonprice}</div>
-                    <div>Rating: ${amazonrating}</div>
-                    <div>Shipping: ${amazonshipping}</div>
-                    <div>Manufactuer: ${brand}</div>
-                    </div>`;
-
-    $("div.pad1").replaceWith(amazontemplate);
-
-
-
-
-  //  return result;
-//}
-
-//getData().then((res) => {
-//)
-
-//getData();
+rainforestSearch();
