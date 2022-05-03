@@ -16,6 +16,7 @@ var dropWalmart2 = document.querySelector('.labelWalmart2')
 var pad1 = document.querySelector('.pad1')
 var pad2 = document.querySelector('.pad2')
 
+var corpimg1 = document.querySelector('.corpimg1')
 
 hide.addEventListener('click', function hide(){
     
@@ -35,34 +36,63 @@ hide.addEventListener('click', function hide(){
 
 dropAmazon1.addEventListener('click', function changeNameAma(){
     dropBtn.textContent = "Amazon"
-    colorChange();
+    colorChange1();
     
 })
 
 dropWalmart1.addEventListener('click', function changeNameWal(){
     dropBtn.textContent ="Walmart"
-    colorChange();
+    colorChange1();
 })
 
 dropAmazon2.addEventListener('click', function changeNameAma1(){
     dropBtn1.textContent = "Amazon"
+    colorChange2();
     
 })
 
 dropWalmart2.addEventListener('click', function changeNameWal1(){
     dropBtn1.textContent ="Walmart"
+    colorChange2();
 })
 
 
 
-function colorChange(){
+function colorChange1(){
     if (dropBtn.textContent == "Amazon"){
-        pad1.style.backgroundColor = "orange";
+        pad1.style.backgroundImage = "url(amazon.jpg)";
+        pad1.style.backgroundSize = "contain"
+        pad1.style.backgroundRepeat = "no-repeat"
+        pad1.style.color ="white"
     }
     else if (dropBtn.textContent == "Walmart"){
-        pad1.style.backgroundColor = "blue"
+        
+        pad1.style.backgroundImage = "url(walmart.jpg)";
+        pad1.style.backgroundSize = "contain"
+        pad1.style.backgroundRepeat = "no-repeat"
+        pad1.style.color ="white"
     }
 }
+
+function colorChange2(){
+    if (dropBtn1.textContent == "Amazon"){
+        pad2.style.backgroundImage = "url(amazon.jpg)";
+        pad2.style.backgroundSize = "contain"
+        pad2.style.backgroundRepeat = "no-repeat"
+        pad2.style.color ="white"
+    }
+    else if (dropBtn1.textContent == "Walmart"){
+        pad2.style.backgroundImage = "url(walmart.jpg)";
+        pad2.style.backgroundSize = "contain"
+        pad2.style.backgroundRepeat = "no-repeat"
+        pad2.style.color ="white"
+    }
+}
+
+
+
+
+
 
 // searchFunction.addEventListener('click', getData)
 
