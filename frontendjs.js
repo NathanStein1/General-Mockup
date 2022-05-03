@@ -16,7 +16,7 @@ var dropWalmart2 = document.querySelector('.labelWalmart2')
 var pad1 = document.querySelector('.pad1')
 var pad2 = document.querySelector('.pad2')
 
-var corpimg1 = document.querySelector('.corpimg1')
+var massContain = document.querySelector('.massContain')
 
 hide.addEventListener('click', function hide() {
 
@@ -28,6 +28,20 @@ hide.addEventListener('click', function hide() {
 
     else {
         loader.classList.add('hide')
+    }
+
+})
+
+hide.addEventListener('click', function hide() {
+
+
+    if (massContain.classList.contains('hide')) {
+        massContain.classList.remove('hide')
+
+    }
+
+    else {
+        massContain.classList.add('hide')
     }
 
 })

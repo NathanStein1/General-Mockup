@@ -69,4 +69,4 @@ async function rainforestSearch(searchField) {
 //     console.log(item_list);
 // });
 
-rainforestSearch();
+// rainforestSearch();
