@@ -18,33 +18,6 @@ var pad2 = document.querySelector('.pad2')
 
 var massContain = document.querySelector('.massContain')
 
-hide.addEventListener('click', function hide() {
-
-
-    if (loader.classList.contains('hide')) {
-        loader.classList.remove('hide')
-
-    }
-
-    else {
-        loader.classList.add('hide')
-    }
-
-})
-
-hide.addEventListener('click', function hide() {
-
-
-    if (massContain.classList.contains('hide')) {
-        massContain.classList.remove('hide')
-
-    }
-
-    else {
-        massContain.classList.add('hide')
-    }
-
-})
 
 
 
@@ -115,24 +88,68 @@ window.
                 connectParticles:
                     true,
                 maxParticles: 150,
-                
+
 
 
 
             });
     };
 
+var price = document.querySelector('.price')
+// var searchField = document.querySelector('.inputBar').value
+
+// Import and export amazon and bluecart to frontend.js
+// To start, both the loader and massContain contain .hide. 
+// WHEN we press the search button
+// We run the api
+// WHILE price == ""
+// Hide stays
+// WHEN price != ""
+// Remove hide class from massContain
 
 
-// searchFunction.addEventListener('click', getData)
+
+// HIDE AND SEEK. Write this function as a single function and on click event.
+
+// Do while?
+while (price == "") {
+    massContain.classList.contains('hide')
+    loader.classList.remove('.hide')
+}
+
+function hideLoader() {
 
 
+    if (loader.classList.contains('hide')) {
+        loader.classList.remove('hide')
 
-// if var price == "", add class .hide to the display,
-// Also, we are going to remove the class .hide from the loader
-// else if price !=="", than we remove .hide from the display
-// Add .hide to the loader
+    }
+
+    else {
+        loader.classList.add('hide')
+    }
+
+}
 
 
-// Display= all the information about the products
-// 
+// Currently backwards (hideContain logic)
+function hideContain() {
+
+
+    if (massContain.classList.contains('hide') && price == "") {
+        massContain.classList.remove('hide')
+
+    }
+
+    else {
+        massContain.classList.add('hide')
+    }
+
+
+}
+
+searchFunction.addEventListener('click', hideLoader)
+searchFunction.addEventListener('click', hideContain)
+
+// searchFunction.addEventListener('click', blueCartSearch(searchField))
+// searchFunction.addEventListener('click', rainforestSearch(searchField))
