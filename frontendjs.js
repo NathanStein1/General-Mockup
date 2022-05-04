@@ -1,3 +1,4 @@
+
 var loader = document.querySelector('.loader')
 var hide = document.querySelector('.loaderBtn')
 var searchFunction = document.querySelector('.searchFunction')
@@ -30,6 +31,14 @@ hide.addEventListener('click', function hide() {
         loader.classList.add('hide')
     }
 
+
+if(loader.classList.contains("hide"))
+ { 
+     loader.classList.remove("hide");
+ }
+ else {
+    loader.classList.add("hide");
+ }
 })
 
 hide.addEventListener('click', function hide() {
@@ -78,6 +87,8 @@ function colorChange1() {
         pad1.style.backgroundSize = "contain"
         pad1.style.backgroundRepeat = "no-repeat"
         pad1.style.color = "white"
+        pad1.style.backgroundPosition = "0px 100px";
+        pad1.style.backgroundColor = "#F56600";
     }
     else if (dropBtn.textContent == "Walmart") {
 
@@ -85,6 +96,8 @@ function colorChange1() {
         pad1.style.backgroundSize = "contain"
         pad1.style.backgroundRepeat = "no-repeat"
         pad1.style.color = "white"
+        pad1.style.backgroundPosition = "0px 100px";
+        pad1.style.backgroundColor = "#041E41";
     }
 }
 
@@ -94,12 +107,16 @@ function colorChange2() {
         pad2.style.backgroundSize = "contain"
         pad2.style.backgroundRepeat = "no-repeat"
         pad2.style.color = "white"
+        pad2.style.backgroundPosition = "0px 100px";
+        pad2.style.backgroundColor = "#F56600";
     }
     else if (dropBtn1.textContent == "Walmart") {
         pad2.style.backgroundImage = "url(walmart.jpg)";
         pad2.style.backgroundSize = "contain"
         pad2.style.backgroundRepeat = "no-repeat"
         pad2.style.color = "white"
+        pad2.style.backgroundPosition = "0px 100px";
+        pad2.style.backgroundColor = "#041E41";
     }
 }
 
