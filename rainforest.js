@@ -1,7 +1,7 @@
 // parameter values for the API
 var rain_sp = {
   url: "https://api.rainforestapi.com/request?",
-  api_key: "ABE03B0334A24B43A78DB0D48E6176C5",
+  api_key: "7AB267DE1D7F401BB8BD2C88F7D741F6",
   search_term: "dyson+air+purifier+TP02",//temp var
   condition: "new",
   sort: "feature",

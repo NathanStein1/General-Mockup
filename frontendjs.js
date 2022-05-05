@@ -183,41 +183,58 @@ searchFunction.addEventListener('click', function () {
         // shipping.textContent = "Shipping Time: " + data[0].shipping_days
         // url.textContent = "Url" + data[0].search_results.product.link
 
-        
-    if (dropBtn.textContent == "Walmart") {
-        manufactuer1.textContent = "Name: " + data[0].title
-        price1.textContent = "Price: $" + data[0].price
-        rating1.textContent = "Rating: " + data[0].rating + "/5"
-        shipping1.textContent = "Shipping Time: " + data[0].shipping_days
-    }
 
-    else if (dropBtn.textContent == "Amazon") {
-        console.log('Needs rainforest')
-    }
+        if (dropBtn.textContent == "Walmart") {
+            manufactuer1.textContent = "Name: " + data[0].title
+            price1.textContent = "Price: $" + data[0].price
+            rating1.textContent = "Rating: " + data[0].rating + "/5"
+            shipping1.textContent = "Shipping Time: " + data[0].shipping_days + " days"
+        }
 
-    if (dropBtn1.textContent == "Walmart") {
-        manufactuer2.textContent = "Name: " + data[0].title
-        price2.textContent = "Price: $" + data[0].price
-        rating2.textContent = "Rating: " + data[0].rating + "/5"
-        shipping2.textContent = "Shipping Time: " + data[0].shipping_days
-    }
+        // else if (dropBtn.textContent == "Amazon") {
+        //     console.log('Needs rainforest')
+        // }
 
-    else if (dropBtn.textContent == "Amazon") {
-        console.log('Needs rainforest')
-    }
+        if (dropBtn1.textContent == "Walmart") {
+            manufactuer2.textContent = "Name: " + data[0].title
+            price2.textContent = "Price: $" + data[0].price
+            rating2.textContent = "Rating: " + data[0].rating + "/5"
+            shipping2.textContent = "Shipping Time: " + data[0].shipping_days + " days"
+        }
 
-
-
-
-
+        // else if (dropBtn1.textContent == "Amazon") {
+        //     console.log('Needs rainforest')
+        // }
 
 
     });
-    // rainforestSearch(searchValue.value).then((data) => {
-    //     // price.textContent = data[0].price
-    // });
 
-    // Sets rule for where it prints
+    rainforestSearch(searchValue.value).then((data) => {
+        // if (dropBtn.textContent == "Walmart") {
+        //     console.log("Needs Bluecart")
+        // }
+
+        if (dropBtn.textContent == "Amazon") {
+            manufactuer1.textContent = "Name: " + data[0].title
+            price1.textContent = "Price: " + data[0].price
+            rating1.textContent = "Rating: " + data[0].rating + "/5"
+            shipping1.textContent = "Shipping: " + data[0].shipping
+        }
+
+        // if (dropBtn1.textContent == "Walmart") {
+        //     console.log("Needs Bluecart")
+        // }
+
+        if (dropBtn1.textContent == "Amazon") {
+            manufactuer2.textContent = "Name: " + data[0].title
+            price2.textContent = "Price: " + data[0].price
+            rating2.textContent = "Rating: " + data[0].rating + "/5"
+            shipping2.textContent = "Shipping: " + data[0].shipping
+        }
+    }
+    );
+
+
 
 
 })
