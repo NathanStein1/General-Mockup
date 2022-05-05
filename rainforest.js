@@ -1,7 +1,7 @@
 // parameter values for the API
 var rain_sp = {
   url: "https://api.rainforestapi.com/request?",
-  api_key: "D55BA8E25B2C41879508929A54C6AF9B",
+  api_key: "ABE03B0334A24B43A78DB0D48E6176C5",
   search_term: "dyson+air+purifier+TP02",//temp var
   condition: "new",
   sort: "feature",
@@ -10,8 +10,9 @@ var rain_sp = {
 
 // fetch call to retrieve product items
 async function rainforestSearch(searchField) {
+  console.log(searchField)
   let match_list = [];
-  let queryURL = `${rain_sp.url}api_key=${rain_sp.api_key}&type=search&amazon_domain=amazon.com&search_term=${rain_sp.search_term}&condition=${rain_sp.condition}&sort=${rain_sp.sort}&output=${rain_sp.output}`
+  let queryURL = `${rain_sp.url}api_key=${rain_sp.api_key}&type=search&amazon_domain=amazon.com&search_term=${searchField}&condition=${rain_sp.condition}&sort=${rain_sp.sort}&output=${rain_sp.output}`
   //debug
   if (searchField == null) {
       searchField = sp.search_term;
