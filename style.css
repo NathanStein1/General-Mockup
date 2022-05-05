@@ -1,3 +1,6 @@
+
+
+
 body {
     background-color: #0000FF;
 }
@@ -51,6 +54,7 @@ header {
     margin: 10px;
     background-image: url(./binocs.jpg);
     background-size: cover;
+    
 }
 
 .pad1 {
