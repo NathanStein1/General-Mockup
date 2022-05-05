@@ -28,6 +28,9 @@ header {
 .inputBar {
     -webkit-box-shadow: 5px 5px 15px 10px #0000ff;
     box-shadow: 5px 5px 15px 10px #0000ff;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .searchFunction{

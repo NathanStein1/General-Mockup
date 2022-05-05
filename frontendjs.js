@@ -104,8 +104,9 @@ window.
             });
     };
 
-var price = document.querySelector('.price')
-var searchField = document.querySelector('.inputBar').value
+
+var searchValue = document.querySelector('.inputBar')
+
 
 // Import and export amazon and bluecart to frontend.js
 // To start, both the loader and massContain contain .hide. 
@@ -159,8 +160,27 @@ function hideContain() {
 
 }
 
-searchFunction.addEventListener('click', hideLoader)
-searchFunction.addEventListener('click', hideContain)
+// searchFunction.addEventListener('click', hideLoader)
+// searchFunction.addEventListener('click', hideContain)
 
-searchFunction.addEventListener('click', blueCartSearch(searchField))
-searchFunction.addEventListener('click', rainforestSearch(searchField))
+// searchFunction.addEventListener('click', blueCartSearch)
+// searchFunction.addEventListener('click', rainforestSearch(searchMonkey))
+var price = document.querySelector('.price')
+var rating = document.querySelector('.rating')
+var shipping = document.querySelector('.shipping')
+var manufactuer = document.querySelector('.manufactuer')
+var url = document.querySelector('.url')
+
+searchFunction.addEventListener('click', function () {
+    console.log(searchValue.value)
+    // blueCartSearch(searchValue.value).then((data) => {
+
+    //     price.textContent = data[0].price
+    //     rating.textContent = data[0].rating
+
+    // });
+    rainforestSearch(searchValue.value).then((data) => {
+        price.textContent = data[0].price
+    });
+
+})

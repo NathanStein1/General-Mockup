@@ -27,8 +27,9 @@ async function blueCartSearch(searchField) {
             console.error(`Trial account ended. Credits count [${credits}]`)
         } else {
             console.log(`Current credits count [${credits}]`)
+            console.log(searchField)
         }
-        // console.log(data.search_results);
+        console.log(data.search_results);
         for (let i = 0; i < data.search_results.length; i++) {
             if (i == 10) {
                 break;
@@ -55,6 +56,7 @@ async function blueCartSearch(searchField) {
     }).catch(err => {
         console.error(err);
     });
+    console.log(match_list)
     return match_list
 }
 
