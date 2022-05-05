@@ -1,6 +1,3 @@
-
-
-
 body {
     background-color: #0000FF;
 }
@@ -57,7 +54,6 @@ header {
     margin: 10px;
     background-image: url(./binocs.jpg);
     background-size: cover;
-    
 }
 
 .pad1 {
@@ -140,14 +136,4 @@ header {
     left: 0;
 
     z-index: -10;
-}
-
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    
-    .containerprice{
-        display: block;
-
-    }
-    
 }

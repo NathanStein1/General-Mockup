@@ -56,11 +56,8 @@ async function blueCartSearch(searchField) {
     }).catch(err => {
         console.error(err);
     });
-
     console.log(match_list)
-origin/develop
     return match_list
-    
 }
 
 // TODO: Use function blueCartSearch() see sample call
