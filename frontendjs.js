@@ -124,10 +124,7 @@ var searchValue = document.querySelector('.inputBar')
 // HIDE AND SEEK. Write this function as a single function and on click event for searchFunction button
 
 // Do while?
-while (price == "") {
-    massContain.classList.contains('hide')
-    loader.classList.remove('.hide')
-}
+
 
 function hideLoader() {
 
@@ -163,24 +160,64 @@ function hideContain() {
 // searchFunction.addEventListener('click', hideLoader)
 // searchFunction.addEventListener('click', hideContain)
 
-// searchFunction.addEventListener('click', blueCartSearch)
-// searchFunction.addEventListener('click', rainforestSearch(searchMonkey))
-var price = document.querySelector('.price')
-var rating = document.querySelector('.rating')
-var shipping = document.querySelector('.shipping')
-var manufactuer = document.querySelector('.manufactuer')
-var url = document.querySelector('.url')
+
+var price1 = document.querySelector('.price1')
+var rating1 = document.querySelector('.rating1')
+var shipping1 = document.querySelector('.shipping1')
+var manufactuer1 = document.querySelector('.manufactuer1')
+// var url = document.querySelector('.url1')
+
+var price2 = document.querySelector('.price2')
+var rating2 = document.querySelector('.rating2')
+var shipping2 = document.querySelector('.shipping2')
+var manufactuer2 = document.querySelector('.manufactuer2')
+// var url = document.querySelector('.url2')
 
 searchFunction.addEventListener('click', function () {
-    console.log(searchValue.value)
-    // blueCartSearch(searchValue.value).then((data) => {
+    console.log("And We're Off!")
+    blueCartSearch(searchValue.value).then((data) => {
 
-    //     price.textContent = data[0].price
-    //     rating.textContent = data[0].rating
+        // manufactuer.textContent = "Name: " +data[0].title
+        // price.textContent = "Price: $" + data[0].price
+        // rating.textContent = "Rating: " + data[0].rating + "/5"
+        // shipping.textContent = "Shipping Time: " + data[0].shipping_days
+        // url.textContent = "Url" + data[0].search_results.product.link
 
-    // });
-    rainforestSearch(searchValue.value).then((data) => {
-        price.textContent = data[0].price
+        
+    if (dropBtn.textContent == "Walmart") {
+        manufactuer1.textContent = "Name: " + data[0].title
+        price1.textContent = "Price: $" + data[0].price
+        rating1.textContent = "Rating: " + data[0].rating + "/5"
+        shipping1.textContent = "Shipping Time: " + data[0].shipping_days
+    }
+
+    else if (dropBtn.textContent == "Amazon") {
+        console.log('Needs rainforest')
+    }
+
+    if (dropBtn1.textContent == "Walmart") {
+        manufactuer2.textContent = "Name: " + data[0].title
+        price2.textContent = "Price: $" + data[0].price
+        rating2.textContent = "Rating: " + data[0].rating + "/5"
+        shipping2.textContent = "Shipping Time: " + data[0].shipping_days
+    }
+
+    else if (dropBtn.textContent == "Amazon") {
+        console.log('Needs rainforest')
+    }
+
+
+
+
+
+
+
     });
+    // rainforestSearch(searchValue.value).then((data) => {
+    //     // price.textContent = data[0].price
+    // });
+
+    // Sets rule for where it prints
+
 
 })
