@@ -105,20 +105,22 @@ window.
     };
 
 var price = document.querySelector('.price')
-// var searchField = document.querySelector('.inputBar').value
+var searchField = document.querySelector('.inputBar').value
 
 // Import and export amazon and bluecart to frontend.js
 // To start, both the loader and massContain contain .hide. 
 // WHEN we press the search button
 // We run the api
 // WHILE price == ""
-// Hide stays
+// Hide stays for massContain
 // WHEN price != ""
 // Remove hide class from massContain
+// if massContain contains the class 'show', 
+// THAN loader adds hide class
 
 
 
-// HIDE AND SEEK. Write this function as a single function and on click event.
+// HIDE AND SEEK. Write this function as a single function and on click event for searchFunction button
 
 // Do while?
 while (price == "") {
@@ -160,5 +162,5 @@ function hideContain() {
 searchFunction.addEventListener('click', hideLoader)
 searchFunction.addEventListener('click', hideContain)
 
-// searchFunction.addEventListener('click', blueCartSearch(searchField))
-// searchFunction.addEventListener('click', rainforestSearch(searchField))
+searchFunction.addEventListener('click', blueCartSearch(searchField))
+searchFunction.addEventListener('click', rainforestSearch(searchField))
