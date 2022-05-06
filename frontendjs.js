@@ -108,128 +108,76 @@ window.
 var searchValue = document.querySelector('.inputBar')
 
 
-// Import and export amazon and bluecart to frontend.js
-// To start, both the loader and massContain contain .hide. 
-// WHEN we press the search button
-// We run the api
-// WHILE price == ""
-// Hide stays for massContain
-// WHEN price != ""
-// Remove hide class from massContain
-// if massContain contains the class 'show', 
-// THAN loader adds hide class
 
-
-
-// HIDE AND SEEK. Write this function as a single function and on click event for searchFunction button
-
-// Do while?
-
-
-function hideLoader() {
-
-
-    if (loader.classList.contains('hide')) {
-        loader.classList.remove('hide')
-
-    }
-
-    else {
-        loader.classList.add('hide')
-    }
-
-}
-
-
-// Currently backwards (hideContain logic)
-function hideContain() {
-
-
-    if (massContain.classList.contains('hide') && price == "") {
-        massContain.classList.remove('hide')
-
-    }
-
-    else {
-        massContain.classList.add('hide')
-    }
-
-
-}
-
-// searchFunction.addEventListener('click', hideLoader)
-// searchFunction.addEventListener('click', hideContain)
-
-
+var box1 = document.querySelector('.box')
 var price1 = document.querySelector('.price1')
 var rating1 = document.querySelector('.rating1')
 var shipping1 = document.querySelector('.shipping1')
 var manufactuer1 = document.querySelector('.manufactuer1')
-// var url = document.querySelector('.url1')
+var url1 = document.querySelector('.url1')
 
+var box2 = document.querySelector('.box1')
 var price2 = document.querySelector('.price2')
 var rating2 = document.querySelector('.rating2')
 var shipping2 = document.querySelector('.shipping2')
 var manufactuer2 = document.querySelector('.manufactuer2')
-// var url = document.querySelector('.url2')
+var url2 = document.querySelector('.url2')
 
 searchFunction.addEventListener('click', function () {
     console.log("And We're Off!")
     blueCartSearch(searchValue.value).then((data) => {
 
-        // manufactuer.textContent = "Name: " +data[0].title
-        // price.textContent = "Price: $" + data[0].price
-        // rating.textContent = "Rating: " + data[0].rating + "/5"
-        // shipping.textContent = "Shipping Time: " + data[0].shipping_days
-        // url.textContent = "Url" + data[0].search_results.product.link
+
 
 
         if (dropBtn.textContent == "Walmart") {
+            
+            
+            box1.style.backgroundImage = `url('${JSON.parse(localStorage.getItem('url/img')).image}')`
             manufactuer1.textContent = "Name: " + data[0].title
             price1.textContent = "Price: $" + data[0].price
             rating1.textContent = "Rating: " + data[0].rating + "/5"
             shipping1.textContent = "Shipping Time: " + data[0].shipping_days + " days"
+            url1.textContent = `url('${JSON.parse(localStorage.getItem('url/img')).link}')`
         }
 
-        // else if (dropBtn.textContent == "Amazon") {
-        //     console.log('Needs rainforest')
-        // }
+
 
         if (dropBtn1.textContent == "Walmart") {
+            box2.style.backgroundImage = `url('${JSON.parse(localStorage.getItem('url/img')).image}')`
             manufactuer2.textContent = "Name: " + data[0].title
             price2.textContent = "Price: $" + data[0].price
             rating2.textContent = "Rating: " + data[0].rating + "/5"
             shipping2.textContent = "Shipping Time: " + data[0].shipping_days + " days"
+            url2.textContent = `url('${JSON.parse(localStorage.getItem('url/img')).link}')`
         }
 
-        // else if (dropBtn1.textContent == "Amazon") {
-        //     console.log('Needs rainforest')
-        // }
+     
 
 
     });
 
     rainforestSearch(searchValue.value).then((data) => {
-        // if (dropBtn.textContent == "Walmart") {
-        //     console.log("Needs Bluecart")
-        // }
+
 
         if (dropBtn.textContent == "Amazon") {
+            box1.style.backgroundImage = `url('${JSON.parse(localStorage.getItem('url/img2')).image}')`
             manufactuer1.textContent = "Name: " + data[0].title
             price1.textContent = "Price: " + data[0].price
             rating1.textContent = "Rating: " + data[0].rating + "/5"
             shipping1.textContent = "Shipping: " + data[0].shipping
+            url1.textContent = `url('${JSON.parse(localStorage.getItem('url/img2')).link}')`
         }
 
-        // if (dropBtn1.textContent == "Walmart") {
-        //     console.log("Needs Bluecart")
-        // }
+
 
         if (dropBtn1.textContent == "Amazon") {
+            box2.style.backgroundImage = `url('${JSON.parse(localStorage.getItem('url/img2')).image}')`
             manufactuer2.textContent = "Name: " + data[0].title
             price2.textContent = "Price: " + data[0].price
             rating2.textContent = "Rating: " + data[0].rating + "/5"
             shipping2.textContent = "Shipping: " + data[0].shipping
+            url2.textContent = `url('${JSON.parse(localStorage.getItem('url/img2')).link}')`
         }
     }
     );
@@ -238,3 +186,10 @@ searchFunction.addEventListener('click', function () {
 
 
 })
+
+
+// TASKS FOR TOMORROW
+// 1. data.search_results (for url and image)
+// 2. Loader function, response.status
+
+

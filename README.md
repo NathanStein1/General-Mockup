@@ -45,6 +45,8 @@ THEN I am presented with the same product price, rating, shipping and manufactur
 * Git branching workflow
 * Agile software development
 * Full-Stack
+* Trianglify.js
+* particles.js
 
 ## Demo
 
