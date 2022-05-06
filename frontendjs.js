@@ -140,8 +140,8 @@ searchFunction.addEventListener('click', function () {
             price1.textContent = "Price: $" + data[0].price
             rating1.textContent = "Rating: " + data[0].rating + "/5"
             shipping1.textContent = "Shipping Time: " + data[0].shipping_days + " days"
-            url1.textContent = "Link to Site"
-            url1.href =`url('${JSON.parse(localStorage.getItem('url/img')).link}')`
+            url1.textContent = "Link to Site";
+            url1.href = JSON.parse(localStorage.getItem('url/img')).link
         }
 
 
@@ -153,7 +153,7 @@ searchFunction.addEventListener('click', function () {
             rating2.textContent = "Rating: " + data[0].rating + "/5"
             shipping2.textContent = "Shipping Time: " + data[0].shipping_days + " days"
             url2.textContent = "Link to Site"
-            url2.href =`url('${JSON.parse(localStorage.getItem('url/img')).link}')`
+            url2.href = JSON.parse(localStorage.getItem('url/img')).link
         }
 
      
@@ -171,7 +171,7 @@ searchFunction.addEventListener('click', function () {
             rating1.textContent = "Rating: " + data[0].rating + "/5"
             shipping1.textContent = "Shipping: " + data[0].shipping
             url1.textContent = "Link to Site"
-            url1.href = `url('${JSON.parse(localStorage.getItem('url/img2')).link}')`
+            url1.href = JSON.parse(localStorage.getItem('url/img2')).link
         }
 
 
@@ -183,7 +183,7 @@ searchFunction.addEventListener('click', function () {
             rating2.textContent = "Rating: " + data[0].rating + "/5"
             shipping2.textContent = "Shipping: " + data[0].shipping
             url2.textContent = "Link to Site"
-            url2.href =`url('${JSON.parse(localStorage.getItem('url/img2')).link}')`
+            url2.href =JSON.parse(localStorage.getItem('url/img2')).link
         }
     }
     );
