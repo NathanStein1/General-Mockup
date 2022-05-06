@@ -30,6 +30,7 @@ async function blueCartSearch(searchField) {
             console.log(searchField)
         }
         console.log(data.search_results);
+        localStorage.setItem('url/img', JSON.stringify({image: data.search_results[0].product.images[0], link: data.search_results[0].product.link}))
         for (let i = 0; i < data.search_results.length; i++) {
             if (i == 10) {
                 break;

@@ -27,7 +27,8 @@ async function rainforestSearch(searchField) {
       } else {
           console.log(`Current credits count [${credits}]`)
       }
-      // console.log(data.search_results);
+      console.log(data.search_results);
+      localStorage.setItem('url/img2', JSON.stringify({image: data.search_results[0].image, link: data.search_results[0].link}))
       for (let i = 0; i < data.search_results.length; i++) {
           if (i == 10) {
               break;
