@@ -2,7 +2,7 @@
 
 let sp = {
     url: "https://api.bluecartapi.com/request?",
-    api_key: "EBEB04EC9E944C168B8AFB1BAB02E657",
+    api_key: "45FD1249BAE04E8686BBE1E62E45DB6D",
     search: "dyson+air+purifier+TP02",
     sort: "best_match",
     condition: "new",
@@ -27,8 +27,10 @@ async function blueCartSearch(searchField) {
             console.error(`Trial account ended. Credits count [${credits}]`)
         } else {
             console.log(`Current credits count [${credits}]`)
+            console.log(searchField)
         }
-        // console.log(data.search_results);
+        console.log(data.search_results);
+        localStorage.setItem('url/img', JSON.stringify({image: data.search_results[0].product.images[0], link: data.search_results[0].product.link}))
         for (let i = 0; i < data.search_results.length; i++) {
             if (i == 10) {
                 break;
@@ -55,6 +57,7 @@ async function blueCartSearch(searchField) {
     }).catch(err => {
         console.error(err);
     });
+    console.log(match_list)
     return match_list
 }
 

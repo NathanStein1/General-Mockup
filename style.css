@@ -28,6 +28,9 @@ header {
 .inputBar {
     -webkit-box-shadow: 5px 5px 15px 10px #0000ff;
     box-shadow: 5px 5px 15px 10px #0000ff;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .searchFunction{
@@ -49,7 +52,16 @@ header {
     width: 300px;
     height: 300px;
     margin: 10px;
-    background-image: url(./binocs.jpg);
+    
+    background-size: cover;
+}
+
+.box1 {
+    border: solid;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    
     background-size: cover;
 }
 
