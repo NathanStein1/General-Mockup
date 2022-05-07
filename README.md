@@ -1,39 +1,23 @@
 # Price Compare (Project 1)
+Authors: Nathan Stein, Jay Altus, Javier Brizuela, Jinsa Sameer
 
-Product price comparison application
-
-## Description
-
-Compare online storefronts (e.g. Walmart and Amazon) to get the lowest price on the same product. Utilized full-stack skills and knowledge to build a price comparer web application from scratch. The team devise and produce a design that solves a real-world problem by integrating data received from multiple server-side API requests.
+# About
+This application will quickly grab the results you need from the world's largest retailers and deliver pricing information on the top products from these companies. The team utilized their full-stack skills and knowledge to build a price comparison web application from scratch. The goal was to solve a real-world problem by integrating data received from multiple server-side API requests.
 
 The team worked collaboratively and learned agile development methodologies, implement feature and bug fixes using git branch workflow and pull requests.
 
+
 ## User Story
 
-AS A consumer
-I WANT to see cheap products
-SO THAT I can buy lowest price out there
+Our users range from the everyday consumer who wants a clean and digestible format to view and compare similar products, to resellers and dropshippers who want to either sell or purchase inventory. 
 
-## Acceptance Criteria
-
-GIVEN a price compare with form inputs
-WHEN I search for a product and select a store
-THEN I am presented with product price, rating, shipping and manufacturer
-WHEN I select another store
-THEN I am presented with the same product price, rating, shipping and manufacturer from the other store
-
-## Installation
-
-1. Download or clone repository
-2. Open the main page (index.html) on your browser to view webpage
-3. Use a text editor to view all coding, Visual Studio Code (recommended editor)
 
 ## Usage
 
 1. Once Price Compare page launches
-2. The search field, drop-down to select stores, and default product image
-3. Type a product in the search field and click search
-4. Select a store in each drop-down and shows the price, rating, shipping and manufacturer
+2. Enter the search term in the input field
+3. Select a store in each drop-down and shows the price, rating, shipping and manufacturer
+4. Click search
 
 ## Features
 
@@ -48,12 +32,18 @@ THEN I am presented with the same product price, rating, shipping and manufactur
 * Trianglify.js
 * particles.js
 
-## Demo
+# Future Plans
 
-![alt text](./assets/images/Price-Search.gif)
+* Add graphs to show the last year's price fluctuations.  Perhaps a section to follow pricing trends and alert users to historical lows.
+* Provide more than the current [0] index. Give more options.
+* Utilize more store APIs to provide more data for the consumer. Alibaba, Wish, and more to truly provide all the relevant information to users.
+* From a design standpoint, focus on mobile. Also, additional focus to put on providing a more seamless experience.
+  -For example, after the call has been completeed, WHEN the store option in the dropdown is changed, THEN the information displayed also changes.
+
 
 ## Website & Repository
 
 * Deployed Link: <https://NathanStein1.github.io/Price-Search>
 * Github Repository: <https://github.com/NathanStein1/Price-Search>
 
+![Screenshot of the site](./Screenshot%20(154).png)
