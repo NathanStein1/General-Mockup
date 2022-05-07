@@ -46,3 +46,4 @@ Our users range from the everyday consumer who wants a clean and digestible form
 * Deployed Link: <https://NathanStein1.github.io/Price-Search>
 * Github Repository: <https://github.com/NathanStein1/Price-Search>
 
+![Screenshot of the site](./Screenshot%20(154).png)
