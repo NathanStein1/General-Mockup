@@ -1,6 +1,7 @@
 # Price Compare (Project 1)
-Authors: Nathan Stein, Jay Altus, Javier Brizuela, Jinsa Sameer
+Authors: Nathan Stein, Jay Autus, Javier Brizuela, Jinsa Sameer
 
+The third party API service is NO LONGER being paid for. Please Contact Nathan Stein for questions regarding this project.
 # About
 This application will quickly grab the results you need from the world's largest retailers and deliver pricing information on the top products from these companies. The team utilized their full-stack skills and knowledge to build a price comparison web application from scratch. The goal was to solve a real-world problem by integrating data received from multiple server-side API requests.
 
